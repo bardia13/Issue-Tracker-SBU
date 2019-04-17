@@ -1,4 +1,8 @@
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
+import { NgxAuthComponent } from './auth/auth.component';
+import { NgxLoginComponent } from './auth/login/login.component';
+import { NgxRegisterComponent } from './auth/register/register.component';
+import { NgxLogoutComponent } from './auth/logout/logout.component';
 import { NgModule } from '@angular/core';
 import {
   NbAuthComponent,
@@ -13,32 +17,35 @@ const routes: Routes = [
   { path: 'pages', loadChildren: 'app/pages/pages.module#PagesModule' },
   {
     path: 'auth',
-    component: NbAuthComponent,
+    component: NgxAuthComponent,
     children: [
       {
         path: '',
-        component: NbLoginComponent,
+        redirectTo: 'login',
+        pathMatch: 'full'
+        // component: NgxRegisterComponent,
+
       },
       {
         path: 'login',
-        component: NbLoginComponent,
+        component: NgxLoginComponent,
       },
       {
         path: 'register',
-        component: NbRegisterComponent,
+        component: NgxRegisterComponent,
       },
       {
         path: 'logout',
-        component: NbLogoutComponent,
+        component: NgxLogoutComponent,
       },
-      {
-        path: 'request-password',
-        component: NbRequestPasswordComponent,
-      },
-      {
-        path: 'reset-password',
-        component: NbResetPasswordComponent,
-      },
+      // {
+      //   path: 'request-password',
+      //   component: NbRequestPasswordComponent,
+      // },
+      // {
+      //   path: 'reset-password',
+      //   component: NbResetPasswordComponent,
+      // },
     ],
   },
   { path: '', redirectTo: 'pages', pathMatch: 'full' },

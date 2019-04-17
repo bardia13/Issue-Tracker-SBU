@@ -1,0 +1,60 @@
+<nb-auth-block>
+    <h3 class="title">ورود به پنل کاربری</h3>
+    <!-- <small class="form-text sub-title">Hello! Sign in with your username or email</small> -->
+
+    <form (ngSubmit)="login()" class="login_form" #form="ngForm" autocomplete="nope">
+
+        <div *ngIf="showMessages.error && errors && errors.length > 0 && !submitted" class="alert alert-danger" role="alert">
+            <div><strong>نام کاربری و یا رمز عبور وارد شده اشتباه می باشد!</strong></div>
+            <!--<div *ngFor="let error of errors">{{ error }}</div>-->
+        </div>
+
+        <div *ngIf="showMessages.success && messages && messages.length > 0 && !submitted" class="alert alert-success"
+            role="alert">
+            <div><strong>در انتظار ورود...</strong></div>
+            <!--<div *ngFor="let message of messages">{{ message }}</div>-->
+        </div>
+
+        <div class="form-group">
+            <input name="usernme" autocomplete="off" [(ngModel)]="user.username" id="input-username" #username="ngModel"
+                class="form-control" pattern="^[-\w\.]{1,30}$" required="required">
+            <label [ngClass]="{'labelTop': user.username.length > 0}">نام کاربری</label>
+            <small class="form-text error" *ngIf="username.invalid && username.touched && username.errors['required']">
+                وارد کردن نام کاربری الزامی است.
+            </small>
+            <!-- <small class="form-text error" *ngIf="username.invalid && username.touched && !username.errors['required']">
+                فقط اعداد، حروف انگلیسی،_ ،-،. مجاز است.
+            </small> -->
+        </div>
+
+        <div class="form-group">
+            <input name="password" [(ngModel)]="user.password" autocomplete="off" type="password" id="input-password"
+                class="form-control" #password="ngModel" [class.form-control-danger]="password.invalid && password.touched"
+                required="required">
+            <label [ngClass]="{'labelTop': user.password.length > 0}">رمز عبور</label>
+            <small class="form-text error" *ngIf="password.invalid && password.touched && password.errors['required']">
+                وارد کردن رمز عبور الزامی است.
+            </small>
+            <!-- <small class="form-text error" *ngIf="password.invalid && password.touched && (password.errors['minlength']) && !password.errors['required']">
+                رمز عبور شما حداقل باید شامل 8 کاراکتر باشد.
+            </small> -->
+        </div>
+        <div class="row forget-link">
+            <!-- <a class="forgot-password" routerLink="../request-password">رمز عبور را فراموش کرده اید ؟</a> -->
+            <a class="forgot-password" (click)="showStaticModal()">رمز عبور را فراموش کرده اید ؟</a>
+        </div>
+
+
+
+        <button [disabled]="submitted || !form.valid" class="btn btn-block" [class.btn-pulse]="submitted">
+            ورود
+        </button>
+        <!-- <div class="row remember_link">
+            <nb-checkbox name="rememberMe" [(ngModel)]="user.rememberMe">مرا به یاد بسپار</nb-checkbox>
+        </div> -->
+    </form>
+    <div class="bottom-form">
+        در رندینو حساب کاربری ندارید ؟ <a routerLink="../register">ثبت نام کنید</a>
+    </div>
+
+</nb-auth-block>

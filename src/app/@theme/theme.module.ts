@@ -2,6 +2,7 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 import {
   NbActionsModule,
@@ -51,6 +52,7 @@ import {
   TinyMCEComponent,
   ThemeSwitcherListComponent,
   ToggleSettingsButtonComponent,
+  NormalModalComponent,
 } from './components';
 import {
   CapitalizePipe,
@@ -123,10 +125,12 @@ const COMPONENTS = [
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
   ToggleSettingsButtonComponent,
+  NormalModalComponent
 ];
 
 const ENTRY_COMPONENTS = [
   ThemeSwitcherListComponent,
+  NormalModalComponent
 ];
 
 const PIPES = [
@@ -157,7 +161,7 @@ const NB_THEME_PROVIDERS = [
 ];
 
 @NgModule({
-  imports: [...BASE_MODULES, ...NB_MODULES],
+  imports: [...BASE_MODULES, ...NB_MODULES, NgxSpinnerModule],
   exports: [...BASE_MODULES, ...NB_MODULES, ...COMPONENTS, ...PIPES],
   declarations: [...COMPONENTS, ...PIPES],
   entryComponents: [...ENTRY_COMPONENTS],

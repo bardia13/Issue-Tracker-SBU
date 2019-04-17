@@ -1,0 +1,210 @@
+$base-color : #4596f6;
+$bottmo_BC :#4596f6;
+$botton_hover_BC : #2381f3;
+$background_color :#f3f3f3;
+$error_color :#ee5757;
+
+nb-layout-column{
+  padding: 0 !important;
+}
+:host /deep/ {
+  $auth-layout-padding: 2.5rem;
+
+
+
+  nb-card {
+    height: calc(100vh);
+    background-color: $background_color;
+    background: url('/assets/images/bg-vaset.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+
+  }
+
+  nb-card-body {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    border: none;
+
+    .logo {
+
+      padding: 0 !important;
+
+
+      img {
+        width: 45%;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+
+
+  .alert div {
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .flex-centered {
+    margin: auto;
+    text-align: center;
+    width: 400px;
+  }
+
+  .box_form {
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0px 1px 8px 0 rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    padding: 25px 40px;
+    margin-top: 20px;
+  }
+
+  [dir="ltr"] .nb-theme-corporate nb-checkbox .customised-control-indicator {
+    right: 15px !important;
+  }
+
+  // TODO rewrite when develop responsive
+  @media (max-width: 550px) {
+    /deep/ nb-layout .layout .layout-container .content .columns nb-layout-column {
+      padding: 0;
+    }
+
+    nb-card {
+      border-radius: 0;
+      height: 100vh;
+    }
+  }
+}
+
+.title {
+  font-size: 19px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.1;
+  letter-spacing: normal;
+  color: #505050;
+}
+
+
+/** INPUT STYLES */
+$labelColor: #9b9b9b;
+$inputFocusColor: #137eff;
+$inputTextSize: 12px;
+$inputFoculsLabelTextSize: 12px;
+
+.form-group {
+  position: relative;
+  margin-top: 35px;
+
+  input {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #cfcfcf;
+    border-radius: 0;
+
+    &:focus,
+    &.has-content {
+      outline: none;
+      border-bottom: 2px solid $inputFocusColor;
+
+      ~label {
+        top: -10px;
+        font-size: $inputFoculsLabelTextSize;
+        color: $inputFocusColor;
+      }
+    }
+  }
+
+
+
+  label {
+    color: $labelColor;
+    font-size: $inputTextSize;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    right: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+  }
+
+  .labelTop {
+    top: -10px;
+    font-size: $inputFoculsLabelTextSize;
+  }
+
+  input.ng-touched.ng-invalid~label {
+    color: #ee5757;
+  }
+
+
+}
+
+.btn {
+  margin-top: 30px;
+}
+
+nb-auth .form-text.error {
+  font-size: 10px !important;
+}
+
+.bottom-link {
+  position: absolute;
+  bottom: -30px;
+
+  a {
+    color: #bbbbbd;
+    margin-left: 20px;
+  }
+
+  a:hover {
+    color: #8e8e8e;
+  }
+}
+
+.bottom-form {
+  color: #515151;
+  font-size: 15px;
+  text-align: center;
+  background-color: #f3f8fc;
+  margin: 25px -40px -25px;
+  padding: 30px 0;
+
+  a {
+    color: #137eff;
+  }
+}
+
+
+
+
+
+
+
+//register:
+[_nghost-c4] .form-group.accept-group {
+  padding: 0 !important;
+}
+
+.nb-theme-corporate nb-checkbox .customised-control {
+  padding-right: 0 !important;
+}
+
+nb-card-header a,
+nb-card-header a:focus {
+  color: $base-color !important;
+}
+
+nb-card-header a i {
+  color: $base-color;
+}

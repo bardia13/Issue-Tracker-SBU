@@ -1,0 +1,110 @@
+<nb-auth-block>
+    <h3 class="title">ثبت نام</h3>
+    <form class="register-form" (ngSubmit)="register()" #form="ngForm">
+
+        <div *ngIf="showMessages.error && errors && errors.length > 0 && !submitted" class="alert alert-danger" role="alert">
+            <div><strong>خطا!</strong></div>
+            <!-- <div *ngFor="let error of errors">نام کاربری وارد شده قبلا در سیستم رندینو ثبت شده است.</div> -->
+        </div>
+        <div *ngIf="showMessages.success && messages && messages.length > 0 && !submitted" class="alert alert-success"
+            role="alert">
+            <div><strong>ثبت نام شما موفقیت آمیز بود.</strong></div>
+            <!--   <div *ngFor="let message of messages">{{ message }}</div> -->
+            <div>در انتظار ورود...</div>
+        </div>
+
+        <div class="form-group">
+            <input name="fullName" [(ngModel)]="user.profile.fullName" id="input-name" #fullName="ngModel" class="form-control"
+                [class.form-control-danger]="fullName.invalid && fullName.touched" required="required" [minlength]="4"
+                [maxlength]="30" pattern="[\u0621-\u0628\u062A-\u063A\u0641-\u0642\u0644-\u0648\u064E-\u0651\u0655\u067E\u0686\u0698\u06A9\u06AF\u06BE\u06CC\u0020\u2000-\u200F\u2028-\u202F]*$"
+                autofocus>
+            <label [ngClass]="{'labelTop': user.profile.fullName.length > 0}">نام و نام خانوادگی</label>
+            <small class="form-text error" *ngIf="fullName.invalid && fullName.touched && fullName.errors['required']">
+                وارد کردن نام و نام خانوادگی الزامی است.
+            </small>
+            <small class="form-text error" *ngIf="fullName.invalid && fullName.touched && !fullName.errors['required']">
+                فقط حروف فارسی مجاز است.
+            </small>
+        </div>
+
+        <div class="
+                form-group">
+            <input name="email" [(ngModel)]="user.email" id="input-email" #email="ngModel" class="form-control" pattern=".+@.+\..+"
+                [class.form-control-danger]="email.invalid && email.touched" [required]="getConfigValue('forms.validation.email.required')"
+                (keyup)="emailChange_event()">
+            <label [ngClass]="{'labelTop': user.email.length > 0}">ایمیل</label>
+            <small class="form-text error" *ngIf="email.invalid && email.touched && email.errors['required']">
+                وارد کردن ایمیل الزامی است.
+            </small>
+            <small class="form-text error" *ngIf="email.invalid && email.touched && email.errors['pattern']">
+                ایمیل وارد شده صحیح نمی باشد.
+            </small>
+            <small class="form-text error" *ngIf="!emailChange && showMessages.error && errors && errors.length > 0 && !submitted">
+                ایمیل وارد شده قبلا در سیستم ثبت شده است.
+            </small>
+        </div>
+
+        <div class="form-group">
+            <input name="usernme" autocomplete="off" [(ngModel)]="user.username" id="input-username" #username="ngModel"
+                class="form-control" pattern="^[-\w\.]{1,30}$" required="required" (keyup)="usernameChange_event()">
+            <label [ngClass]="{'labelTop': user.username.length > 0}">نام کاربری</label>
+            <small class="form-text error" *ngIf="username.invalid && username.touched && username.errors['required']">
+                وارد کردن نام کاربری الزامی است.
+            </small>
+            <small class="form-text error" *ngIf="username.invalid && username.touched && !username.errors['required']">
+                فقط اعداد، حروف انگلیسی،_ ،-،. مجاز است.
+            </small>
+            <small class="form-text error" *ngIf="!usernameChange && showMessages.error && errors && errors.length > 0 && !submitted">
+                نام کاربری وارد شده قبلا در سیستم ثبت شده است.
+            </small>
+        </div>
+        <div class="form-group">
+            <input name="phone" autocomplete="off" [(ngModel)]="user.profile.phoneNumber" id="input-phone" #phone="ngModel"
+                class="form-control" pattern="^0[0-9]{10,10}$" required="required">
+            <label [ngClass]="{'labelTop': user.profile.phoneNumber.length > 0}">تلفن همراه</label>
+            <small class="form-text error" *ngIf="phone.invalid && phone.touched && phone.errors['required']">
+                وارد کردن شماره تلفن الزامی است.
+            </small>
+            <small class="form-text error" *ngIf="phone.invalid && phone.touched && !phone.errors['required']">
+                شماره تلفن وارد شده صحیح نمی باشد.
+            </small>
+        </div>
+        <div class="form-group">
+            <input name="password" [(ngModel)]="user.password" autocomplete="off" type="password" id="input-password"
+                class="form-control" #password="ngModel" [class.form-control-danger]="password.invalid && password.touched"
+                required="required" [minlength]="8">
+            <label [ngClass]="{'labelTop': user.password.length > 0}">رمز عبور</label>
+            <small class="form-text error" *ngIf="password.invalid && password.touched && password.errors['required']">
+                وارد کردن رمز عبور الزامی است.
+            </small>
+            <small class="form-text error" *ngIf="password.invalid && password.touched && (password.errors['minlength']) && !password.errors['required']">
+                رمز عبور شما حداقل باید شامل 8 کاراکتر باشد.
+            </small>
+        </div>
+
+
+        <!--  <div class="form-group accept-group col-sm-12" *ngIf="getConfigValue('forms.register.terms')">
+          <nb-checkbox name="terms" [(ngModel)]="user.terms" [required]="getConfigValue('forms.register.terms')">
+            <a href="#" target="_blank"><strong>با قوانین و مقررات رندینو موافق هستم</strong></a>
+          </nb-checkbox>
+        </div> -->
+
+        <button [disabled]="submitted || !form.valid" class="btn btn-block" [class.btn-pulse]="submitted">
+            ثبت نام
+        </button>
+    </form>
+
+    <div class="bottom-form">
+        کاربر رندینو می باشید ؟ <a routerLink="../login">وارد شوید</a>
+    </div>
+
+    <!-- <div class="row bottom-link">
+        <a href="#">
+            تماس با ما
+        </a>
+        <a href="#">
+            راهنما
+        </a>
+    </div> -->
+
+</nb-auth-block>

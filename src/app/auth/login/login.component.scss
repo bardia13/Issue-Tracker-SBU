@@ -1,0 +1,47 @@
+.forget-link {
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.83;
+    letter-spacing: normal;
+    text-align: left;
+    direction: ltr !important;
+    color: #137eff;
+    width: 100%;
+
+    margin-right: 2px;
+
+    a {
+        cursor: pointer;
+        margin-top: 20px;
+    }
+}
+
+.remember_link {
+
+    margin-top: 15px;
+
+    nb-checkbox .customised-control-description {
+        font-size: 13px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.69;
+        letter-spacing: normal;
+        text-align: left;
+        color: #646464;
+        margin-right: 26px;
+    }
+}
+.nb-theme-corporate nb-checkbox .customised-control-description{
+        font-size: 13px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.69;
+        letter-spacing: normal;
+        text-align: left;
+        color: #646464;
+        margin-right: 26px;
+}

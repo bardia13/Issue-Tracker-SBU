@@ -1,0 +1,36 @@
+<div class="modal-header">
+  <span>{{ modalHeader }}</span>
+  <button class="close" aria-label="Close" (click)="close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<!-- <div class="modal-body" [ngStyle]="{'color': textColor}"> -->
+<div class="modal-body">
+  <b>
+    {{modalTitle1}}
+  </b>
+  <p [ngStyle]="{'font-weight': 500}">
+    {{ modalContent1}}
+  </p>
+  <b>
+    {{modalTitle2}}
+  </b>
+  <p style="margin: 24px 0" [ngStyle]="{'font-weight': content_font_weight ,  'color' : content_color}">
+    {{ modalContent2}}
+  </p>
+
+  <p [ngStyle]="{'font-weight': content_font_weight ,  'color' : content_color}">
+    {{ modalContent3}}
+  </p>
+
+  <div>
+    <small>
+      {{modalSmall}}
+    </small>
+  </div>
+
+</div>
+<!-- <div class="modal-footer">
+  <button class="btn btn-success conf-button" aria-label="Close" (click)="confirm(false)">انصراف</button>
+  <button class="btn btn-danger  conf-button" (click)="confirm(true)">حذف</button>
+</div> -->
