@@ -4,7 +4,7 @@
 
 @include nb-install-component() {
   .themes-switcher {
-    display: flex;
+    display: none;
     font-size: 1.25rem;
     padding: 0.8rem 1.25rem;
     align-items: center;
