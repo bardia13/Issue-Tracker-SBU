@@ -34,6 +34,8 @@ import {
   NbRadioModule,
   NbSelectModule,
   NbTooltipModule,
+  DEFAULT_MEDIA_BREAKPOINTS,
+  NbLayoutDirection,
 } from '@nebular/theme';
 
 import { NbSecurityModule } from '@nebular/security';
@@ -139,7 +141,7 @@ const NB_THEME_PROVIDERS = [
     {
       name: 'default',
     },
-    [ DEFAULT_THEME, COSMIC_THEME, CORPORATE_THEME ],
+    [ DEFAULT_THEME, COSMIC_THEME, CORPORATE_THEME ], DEFAULT_MEDIA_BREAKPOINTS, NbLayoutDirection.RTL
   ).providers,
   ...NbSidebarModule.forRoot().providers,
   ...NbMenuModule.forRoot().providers,
