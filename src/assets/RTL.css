@@ -1,0 +1,37 @@
+@font-face {
+    font-family: PersianFont;
+    src: url('../assets/fonts/Farsi_numerals/eot/IRANSansWeb(FaNum)_Bold.eot'),
+    url('../assets/fonts/Farsi_numerals/eot/IRANSansWeb(FaNum)_Bold.eot?#iefix') format('embedded-opentype'),
+    url('../assets/fonts/Farsi_numerals/woff2/IRANSansWeb(FaNum)_Bold.woff2') format('woff2'),
+    url('../assets/fonts/Farsi_numerals/woff/IRANSansWeb(FaNum)_Bold.woff') format('woff'),
+    url('../assets/fonts/Farsi_numerals/ttf/IRANSansWeb(FaNum)_Bold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: PersianFont;
+    src: url('../assets/fonts/Farsi_numerals/eot/IRANSansWeb(FaNum)_Medium.eot'),
+    url('../assets/fonts/Farsi_numerals/eot/IRANSansWeb(FaNum)_Medium.eot?#iefix') format('embedded-opentype'),
+    url('../assets/fonts/Farsi_numerals/woff2/IRANSansWeb(FaNum)_Medium.woff2') format('woff2'),
+    url('../assets/fonts/Farsi_numerals/woff/IRANSansWeb(FaNum)_Medium.woff') format('woff'),
+    url('../assets/fonts/Farsi_numerals/ttf/IRANSansWeb(FaNum)_Medium.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: PersianFont;
+    src: url('../assets/fonts/Farsi_numerals/eot/IRANSansWeb(FaNum).eot'),
+    url('../assets/fonts/Farsi_numerals/eot/IRANSansWeb(FaNum).eot?#iefix') format('embedded-opentype'),
+    url('../assets/fonts/Farsi_numerals/woff2/IRANSansWeb(FaNum).woff2') format('woff2'),
+    url('../assets/fonts/Farsi_numerals/woff/IRANSansWeb(FaNum).woff') format('woff'),
+    url('../assets/fonts/Farsi_numerals/ttf/IRANSansWeb(FaNum).ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+body {
+    direction: rtl;
+    font-family: PersianFont;
+}
