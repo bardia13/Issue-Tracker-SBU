@@ -31,7 +31,7 @@
     "label-position": true,
     "max-line-length": [
       true,
-      120
+      220
     ],
     "member-access": false,
     "no-arg": true,
@@ -74,7 +74,6 @@
     ],
     "radix": true,
     "semicolon": [
-      true,
       "always"
     ],
     "triple-equals": [
@@ -124,13 +123,16 @@
         "message": "please don't"
       }
     ],
-    "use-input-property-decorator": true,
-    "use-output-property-decorator": true,
-    "no-output-rename": true,
     "use-life-cycle-interface": true,
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
     "directive-class-suffix": true,
-    "no-unused-variable": true
+    "no-unused-variable": true,
+    "use-host-property-decorator": true,
+    "use-input-property-decorator": true,
+    "use-output-property-decorator": true,
+    "no-attribute-parameter-decorator": true,
+    "no-input-rename": true,
+    "no-output-rename": true
   }
 }
