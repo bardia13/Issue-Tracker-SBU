@@ -5,6 +5,7 @@
 
 @include nb-install-component() {
   .toggle-settings {
+    display: none;
     position: fixed;
     top: 50%;
     height: 3rem;
