@@ -47,6 +47,7 @@
 
     .logo {
       padding: 0 nb-theme(padding);
+      font-family: PersianFont;
       font-size: 1.75rem;
       font-weight: nb-theme(font-weight-bolder);
       @include nb-ltr(border-left, 1px solid nb-theme(separator));
