@@ -5,7 +5,7 @@
     <form (ngSubmit)="login()" class="login_form" #form="ngForm" autocomplete="nope">
 
         <div *ngIf="showMessages.error && errors && errors.length > 0 && !submitted" class="alert alert-danger" role="alert">
-            <div><strong>نام کاربری و یا رمز عبور وارد شده اشتباه می باشد!</strong></div>
+            <div><strong>نام کاربری و یا رمز عبور وارد شده اشتباه می‌باشد!</strong></div>
             <!--<div *ngFor="let error of errors">{{ error }}</div>-->
         </div>
 
@@ -41,10 +41,8 @@
         </div>
         <div class="row forget-link">
             <!-- <a class="forgot-password" routerLink="../request-password">رمز عبور را فراموش کرده اید ؟</a> -->
-            <a class="forgot-password" (click)="showStaticModal()">رمز عبور را فراموش کرده اید ؟</a>
+            <a class="forgot-password" (click)="showStaticModal()">رمز عبور را فراموش کرده‌اید ؟</a>
         </div>
-
-
 
         <button [disabled]="submitted || !form.valid" class="btn btn-block" [class.btn-pulse]="submitted">
             ورود
@@ -54,7 +52,7 @@
         </div> -->
     </form>
     <div class="bottom-form">
-        در رندینو حساب کاربری ندارید ؟ <a routerLink="../register">ثبت نام کنید</a>
+        در رندینو حساب کاربری ندارید؟ <a routerLink="../register">ثبت نام کنید. </a>
     </div>
 
 </nb-auth-block>

@@ -1,15 +1,16 @@
 .forget-link {
+    font-family: PersianFont;
     font-size: 12px;
     font-weight: normal;
     font-style: normal;
     font-stretch: normal;
     line-height: 1.83;
     letter-spacing: normal;
+    // why ltr and left-aligned? rtl and right-aligned looks better.
     text-align: left;
     direction: ltr !important;
     color: #137eff;
     width: 100%;
-
     margin-right: 2px;
 
     a {
@@ -23,6 +24,7 @@
     margin-top: 15px;
 
     nb-checkbox .customised-control-description {
+        font-family: PersianFont;
         font-size: 13px;
         font-weight: normal;
         font-style: normal;
@@ -35,6 +37,7 @@
     }
 }
 .nb-theme-corporate nb-checkbox .customised-control-description{
+    font-family: PersianFont;
         font-size: 13px;
         font-weight: normal;
         font-style: normal;

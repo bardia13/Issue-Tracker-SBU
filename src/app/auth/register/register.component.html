@@ -37,7 +37,7 @@
                 وارد کردن ایمیل الزامی است.
             </small>
             <small class="form-text error" *ngIf="email.invalid && email.touched && email.errors['pattern']">
-                ایمیل وارد شده صحیح نمی باشد.
+                ایمیل وارد شده صحیح نمی‌باشد.
             </small>
             <small class="form-text error" *ngIf="!emailChange && showMessages.error && errors && errors.length > 0 && !submitted">
                 ایمیل وارد شده قبلا در سیستم ثبت شده است.
@@ -55,7 +55,7 @@
                 فقط اعداد، حروف انگلیسی،_ ،-،. مجاز است.
             </small>
             <small class="form-text error" *ngIf="!usernameChange && showMessages.error && errors && errors.length > 0 && !submitted">
-                نام کاربری وارد شده قبلا در سیستم ثبت شده است.
+                نام کاربری وارد شده قبلاً در سیستم ثبت شده است.
             </small>
         </div>
         <div class="form-group">
@@ -66,7 +66,7 @@
                 وارد کردن شماره تلفن الزامی است.
             </small>
             <small class="form-text error" *ngIf="phone.invalid && phone.touched && !phone.errors['required']">
-                شماره تلفن وارد شده صحیح نمی باشد.
+                شماره تلفن وارد شده صحیح نمی‌باشد.
             </small>
         </div>
         <div class="form-group">
@@ -95,7 +95,7 @@
     </form>
 
     <div class="bottom-form">
-        کاربر رندینو می باشید ؟ <a routerLink="../login">وارد شوید</a>
+        کاربر رندینو می‌باشید؟ <a routerLink="../login">وارد شوید. </a>
     </div>
 
     <!-- <div class="row bottom-link">

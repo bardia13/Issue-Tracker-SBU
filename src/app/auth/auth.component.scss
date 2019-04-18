@@ -7,10 +7,9 @@ $error_color :#ee5757;
 nb-layout-column{
   padding: 0 !important;
 }
+
 :host /deep/ {
   $auth-layout-padding: 2.5rem;
-
-
 
   nb-card {
     height: calc(100vh);
@@ -19,7 +18,6 @@ nb-layout-column{
     background-repeat: no-repeat;
     background-position: center;
     margin: 0;
-
   }
 
   nb-card-body {
@@ -29,9 +27,7 @@ nb-layout-column{
     border: none;
 
     .logo {
-
       padding: 0 !important;
-
 
       img {
         width: 45%;
@@ -40,7 +36,6 @@ nb-layout-column{
       }
     }
   }
-
 
   .alert div {
     text-align: center;
@@ -80,6 +75,7 @@ nb-layout-column{
 }
 
 .title {
+  font-family: PersianFont;
   font-size: 19px;
   font-weight: 500;
   font-style: normal;
@@ -88,7 +84,6 @@ nb-layout-column{
   letter-spacing: normal;
   color: #505050;
 }
-
 
 /** INPUT STYLES */
 $labelColor: #9b9b9b;
@@ -101,6 +96,7 @@ $inputFoculsLabelTextSize: 12px;
   margin-top: 35px;
 
   input {
+    font-family: PersianFont;
     font-size: 14px;
     font-weight: normal;
     font-style: normal;
@@ -119,16 +115,20 @@ $inputFoculsLabelTextSize: 12px;
 
       ~label {
         top: -10px;
+        font-family: PersianFont;
         font-size: $inputFoculsLabelTextSize;
         color: $inputFocusColor;
       }
     }
   }
 
-
+  small {
+    font-family: PersianFont;
+  }
 
   label {
     color: $labelColor;
+    font-family: PersianFont;
     font-size: $inputTextSize;
     font-weight: normal;
     position: absolute;
@@ -146,11 +146,10 @@ $inputFoculsLabelTextSize: 12px;
   input.ng-touched.ng-invalid~label {
     color: #ee5757;
   }
-
-
 }
 
 .btn {
+  font-family: PersianFont;
   margin-top: 30px;
 }
 
@@ -174,6 +173,7 @@ nb-auth .form-text.error {
 
 .bottom-form {
   color: #515151;
+  font-family: PersianFont;
   font-size: 15px;
   text-align: center;
   background-color: #f3f8fc;
@@ -184,12 +184,6 @@ nb-auth .form-text.error {
     color: #137eff;
   }
 }
-
-
-
-
-
-
 
 //register:
 [_nghost-c4] .form-group.accept-group {
